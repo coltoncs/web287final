@@ -1,38 +1,149 @@
-.App {
-  text-align: center;
-}
+nav {
+  height: 100vh;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+nav .navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
   align-items: center;
+  list-style-type: none;
+  font-weight: 800;
+  font-size: 2rem;
+  height: 50%;
+}
+
+.nav-link, .social-link {
+  color: #4e4e4e;
+  text-decoration: none;
+  padding: 5px;
+}
+
+.nav-link.active {
+  color: black;
+  border-bottom: 2px solid black;
+}
+
+nav .links {
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  gap: 5%;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+main>p {
+  width: 75%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+p {
+  font-weight: 600;
+}
+
+.download_link {
+  font-weight: 600;
+  color: black;
+  align-self: flex-start;
+  margin-left: 12.5%;
+}
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+.portrait {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+.quote {
+  position: relative;
+  font-size: 2.4em;
+  line-height: 1.5em;
+  width: 75%;
+}
+
+.quote cite {
+  font-size: 0.6em;
+  font-weight: 700;
+  color: #363636;
+  float: right;
+}
+
+.quote cite:before {
+  content: '\2015';
+}
+
+.quote:after {
+  content: '\201d';
+  position: absolute;
+  top: 0.18em;
+  right: -50px;
+  font-size: 6em;
+  font-style: italic;
+  color: #ffb73b;
+  z-index: -1;
+}
+
+.project-image {
+  max-width: 25%;
+}
+
+@media screen and (max-width: 600px) {
+  #root {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8fr;
+    overflow-y: auto;
+    overflow-x: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  main {
+    padding-bottom: 40vh;
+  }
+
+  .portrait {
+    margin-bottom: 50px;
+  }
+
+  .quote {
+    font-size: 1.8rem;
+    padding-bottom: 35px;
+  }
+
+  nav {
+    height: 15vh;
+    justify-content: space-evenly;
+  }
+
+  nav .navigation {
+    font-size: 1rem;
+    flex-direction: row;
+  }
+
+  .gallery {
+    flex-direction: column;
+  }
+
+  .gallery a {
+    margin: 25px 0 25px 0;
   }
 }

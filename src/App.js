@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Nav from './components/Nav';
+import { Routes, Route } from 'react-router-dom';
+import Home from "./pages/home";
+import About from "./pages/about";
+import Portfolio from "./pages/portfolio";
+import Contact from "./pages/contact";
+import Project1 from './pages/portfolio/project1';
+import Project2 from './pages/portfolio/project2';
+import Project3 from './pages/portfolio/project3';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/portfolio' element={<Portfolio/>} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/portfolio/mrp' element={<Project1 />} />
+        <Route path='/portfolio/ureco' element={<Project2 />} />
+        <Route path='/portfolio/personal' element={<Project3 />} />
+      </Routes>
+    </>
   );
 }
 
