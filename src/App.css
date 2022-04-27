@@ -43,6 +43,7 @@ main {
   align-items: center;
   gap: 5%;
   width: 100%;
+  padding: 0;
 }
 
 main>p {
@@ -145,5 +146,13 @@ p {
 
   .gallery a {
     margin: 25px 0 25px 0;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 800px) {
+  main {
+    width: 100vw;
+    padding-left: 30vw;
+    min-height: 100vh;
   }
 }

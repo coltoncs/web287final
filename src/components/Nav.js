@@ -1,26 +1,69 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import styled from 'styled-components';
 import { VscGithub, VscTwitter } from 'react-icons/vsc';
 import { SiLinkedin } from 'react-icons/si';
 import { AiFillMessage } from 'react-icons/ai';
 
+const NavBar = styled.nav`
+  height: 100vh;
+  width: 100%;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @media screen and (max-width: 600px) {
+    height: 15vh;
+    justify-content: space-evenly;
+  }
+
+  @media screen and (min-width: 601px) and (max-width: 800px) {
+    position: fixed;
+    width: 30vw;
+  }
+`;
+
+const Navigation = styled.ul`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  list-style-type: none;
+  font-weight: 800;
+  font-size: 2rem;
+  height: 50%;
+
+  @media screen and (max-width: 600px) {
+    font-size: 1rem;
+    flex-direction: row;
+  }
+`;
+
+const SocialNav = styled.ul`
+  display: flex;
+  justify-content: space-evenly;
+  list-style-type: none;
+`;
+
 const Nav = () => {
   return (
-    <nav>
-      <ul className="navigation">
+    <NavBar>
+      <Navigation>
         <li>
-          <Link to="/" className="nav-link">
+          <NavLink to="/" className="nav-link">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/about" className="nav-link">
+          <NavLink to="/about" className="nav-link">
             About
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link to="/portfolio" className="nav-link">
+          <NavLink to="/portfolio" className="nav-link">
             Portfolio
-          </Link>
+          </NavLink>
         </li>
         <li>
           <a className="nav-link" href="https://myweb287blog.wordpress.com/">
@@ -28,12 +71,12 @@ const Nav = () => {
           </a>
         </li>
         <li>
-          <Link to="/contact" className="nav-link">
+          <NavLink to="/contact" className="nav-link">
             Contact
-          </Link>
+          </NavLink>
         </li>
-      </ul>
-      <ul className="links">
+      </Navigation>
+      <SocialNav>
         <li>
           <a
             className="social-link"
@@ -74,8 +117,8 @@ const Nav = () => {
             <AiFillMessage size="2rem"/>
           </a>
         </li>
-      </ul>
-    </nav>
+      </SocialNav>
+    </NavBar>
   );
 };
 

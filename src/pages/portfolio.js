@@ -14,9 +14,13 @@ const Gallery = styled.div`
   @media screen and (max-width: 600px) {
     flex-direction: column;
   }
+
+  @media screen and (min-width: 601px) and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 const Card = styled(Link)`
-  width: 300px;
+  max-width: 33%;
   height: 300px;
   text-decoration: none;
   display: flex;
@@ -44,9 +48,13 @@ const Card = styled(Link)`
     text-align: center;
     color: black;
   }
+
+  @media screen and (min-width: 601px) and (max-width: 800px) {
+    max-width: 75%
+  }
 `;
 
-const Portfolio = () => {
+const Portfolio = ( images ) => {
   return (
     <main>
       <h1>Portfolio</h1>
@@ -58,7 +66,7 @@ const Portfolio = () => {
         <Card to="personal">
           <img
             src={portfolio}
-            alt="Go source code for the data access application"
+            alt="The landing page of my personal portfolio website"
           />
           <h2>Personal Website</h2>
         </Card>
